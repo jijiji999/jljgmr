@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jlj-gmr"
+version = "0.1.0"
+description = "GMR-style whole-body motion retargeting for the A00 humanoid"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.14", "mujoco>=3.3.7", "mink>=0.0.13", "qpsolvers[proxqp]>=4.3"]
+
+[project.optional-dependencies]
+smplx = ["torch", "smplx"]
+render = ["imageio[ffmpeg]"]
+
+[project.scripts]
+jlj-gmr = "jlj_gmr.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jlj_gmr*"]
+
+[tool.setuptools.package-data]
+jlj_gmr = ["configs/*.json"]

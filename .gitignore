@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+outputs/
+
+# Extracted robot assets are tracked; omit their duplicate source archive.
+/A00_MuJoCo_XML/*.zip
